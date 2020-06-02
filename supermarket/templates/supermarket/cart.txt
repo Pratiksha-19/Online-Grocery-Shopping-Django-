@@ -1,0 +1,7 @@
+Orange|1|
+Onion|1|
+Drumstick|1|
+Pumpkin|2|
+Onion|1|
+Lettuce|1|
+Mango|2|

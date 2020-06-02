@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.header {
+  background-color: #008B8B;
+  color: white;
+  height: 70px;
+}
+
+.header-logo {
+  text-align:center;
+  font-size: 33px;
+  padding: 20px 40px;
+}
+
+.btn-wrapper {
+  margin: 20px 0;
+
+}
+
+.cart {
+  background-color: #239b76;
+  text-decoration: none;
+}
+
+.btn {
+  padding: 12px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.bil{
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+      <div class="header-logo">Items in your cart</div>
+</div>
+<div>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Quantity in kg</th>
+    <th>Price</th>
+  </tr>
+
+
+{% for key1 in name1 %}
+    <tr>
+    <td>{{key1.items}}</td>
+    <td>{{key1.qty}}</td>
+{% endfor %}
+    {% for key2 in name2 %}
+    <td>{{key2.price}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+
+<div class="bil">
+  {% for key2 in name2 %}
+    <p>Total      : {{key2.total}}</p>
+    <p>GST        : {{key2.gst}}</p>
+    <p>Bill total : {{key2.bill}}</p>
+{% endfor %}
+</div>
+
+<div class="btn-wrapper">
+  <a href="{% url 'proceed' %}" class="btn cart">Proceed</a>
+</div>
+
+
+</body>
+</html>

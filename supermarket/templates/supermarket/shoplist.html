@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+h4 {
+  font-size:25px;
+}
+
+.header {
+  background-color: #008B8B;
+  color: white;
+  height: 70px;
+}
+
+.header-logo {
+  text-align:center;
+  font-size: 33px;
+  padding: 20px 40px;
+}
+
+.btn-wrapper {
+  margin: 20px 0;
+
+}
+
+.cart, .add, .dele {
+  background-color: #239b76;
+  text-decoration: none;
+}
+
+.list {
+  margin:40px;
+}
+
+.mid {
+  margin:30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+      <div class="header-logo">Shopping List</div>
+</div>
+<div class="list">
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quantity in kg</th>
+  </tr>
+
+{% block content %}
+
+{% for key in name %}
+    <tr>
+    <td>{{key.items}}</td>
+    <td>{{key.price}}</td>
+    <td>{{key.qty}}</td>
+    </tr>
+{% endfor %}
+
+{% endblock %}
+</table>
+</div>
+
+<h4>Add items to cart</h4>
+<div class="mid">
+<form method="POST" action="{% url 'shoplist' %}"> {% csrf_token %} 
+    
+    <div id="main">
+      <b>Item:</b><input type=text name="item">
+      <b>Quantity:</b><input type=text name="qty">
+
+             <!-- <p> <input type=button value="Add"   onclick="add()"> </p>-->
+             <form method="POST" action="{% url 'shoplist' %}"> {% csrf_token %}
+             <p><button type="submit" name="add">Add</button></p>
+             </form>
+             <form method="POST" action="{% url 'shoplist' %}"> {% csrf_token %}
+             <p><button type="submit" name="delete">Delete</button></p>
+             </form>
+              
+    </div>
+
+  </form> 
+</div>
+
+<div class="btn-wrapper">
+  <a href="{% url 'cartitems' %}" class="btn cart">Go to your cart</a>
+</div>
+
+
+</body>
+</html>

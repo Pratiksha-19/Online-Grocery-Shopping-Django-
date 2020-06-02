@@ -1,0 +1,85 @@
+body {
+  margin: 0 auto;
+  font-family: "Lucida Grande";
+  background-image: url("cover.jpg");
+  
+  background-size: cover;
+}
+
+.header {
+  background-color: rgba(0, 255, 0, 0.3);
+  color: white;
+  height: 70px;
+}
+
+.header-logo {
+  float: left;
+  font-size: 33px;
+  padding: 20px 40px;
+}
+
+.header-list {
+  float:right;
+  font-size:20px;
+  font-color:#fff;
+}
+
+li a{
+  text-decoration: none;
+  color:#fff;
+}
+
+li a:hover {
+  background-color: green;
+
+}
+
+.header-list li {
+  float: left;
+  
+  text-align:center;
+  padding: 10px 10px 10px 10px;
+  list-style:none;
+  text-decoration: none;
+}
+
+.top-wrapper {
+  padding: 100px 100px;
+  color:black;
+  text-align: left;
+  
+}
+
+.top-wrapper .title {
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.description{
+  font-size: 30px;
+  margin-left:10px;
+  margin-right: 400px;
+}
+
+
+
+
+.footer {
+  
+  background-color: #2f5167;
+  color: white;
+  opacity:0.9;
+  padding: 20px;
+  margin:0 auto;
+  position:absolute;
+   bottom:0;
+   width:100%;
+   height:30px; 
+}
+
+.footer-text {
+  float: left;
+  font-size: 20px;
+  opacity:1;
+}

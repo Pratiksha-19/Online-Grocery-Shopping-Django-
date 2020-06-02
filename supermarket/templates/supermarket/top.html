@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Ninja Kart</title>
+    <link href="{% static 'css\style.css' %}" rel="stylesheet" >
+    
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-logo">The Ninja Kart</div>
+      <div class="header-list">
+        <ul>
+          <li ><a href="{% url 'shoplist' %}">Available items</a></li>
+          <li><a href="#">Your Cart</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="top-wrapper">
+      
+        <h1 class="title">The Ninja Kart</h1>
+        <p class="description">
+          In this period of lockdown, worried about stepping out to buy veggies and fruits with the fear of Corona?
+          <br>
+          We've got you. The Ninja Kart are just one click away to deliver vegetables and fruits to your door step. 
+          <br>
+          Add items you want anytime.
+        </p>
+    </div>
+
+    <div class="footer">
+      <div class="footer-text">We deliver high quality food with complete hygiene</div>
+    </div>
+  
+  </body>
+</html>
